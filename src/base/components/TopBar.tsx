@@ -1,0 +1,21 @@
+import { Phone } from 'lucide-react'
+import { common } from '../content/common'
+import { useContent } from '../i18n/useContent'
+import { innerContainer } from './containers'
+
+function TopBar() {
+  const { topBar } = useContent(common)
+
+  return (
+    <div className="bg-topbar">
+      <div className={`${innerContainer} flex items-center justify-center gap-2 py-2.5 text-[15px] font-bold text-white`}>
+        <Phone className="size-4" aria-hidden="true" />
+        <a href={`tel:${topBar.phone}`} dir="ltr">
+          {topBar.phone}
+        </a>
+      </div>
+    </div>
+  )
+}
+
+export default TopBar
